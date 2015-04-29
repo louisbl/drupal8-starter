@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "daf85d42f72d19eb3fd08635ac89e4b8",
+    "hash": "b0c21c8905161ba8354bd7c3cbe4378c",
     "packages": [
         {
             "name": "behat/mink",
@@ -881,78 +881,90 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "8.0.0",
-            "replace": {
-                "drupal/action": "self.version",
-                "drupal/aggregator": "self.version",
-                "drupal/ban": "self.version",
-                "drupal/bartik": "self.version",
-                "drupal/basic_auth": "self.version",
-                "drupal/block": "self.version",
-                "drupal/block_content": "self.version",
-                "drupal/book": "self.version",
-                "drupal/breakpoint": "self.version",
-                "drupal/ckeditor": "self.version",
-                "drupal/classy": "self.version",
-                "drupal/color": "self.version",
-                "drupal/comment": "self.version",
-                "drupal/config": "self.version",
-                "drupal/config_translation": "self.version",
-                "drupal/contact": "self.version",
-                "drupal/content_translation": "self.version",
-                "drupal/contextual": "self.version",
-                "drupal/datetime": "self.version",
-                "drupal/dblog": "self.version",
-                "drupal/editor": "self.version",
-                "drupal/entity_reference": "self.version",
-                "drupal/field": "self.version",
-                "drupal/field_ui": "self.version",
-                "drupal/file": "self.version",
-                "drupal/filter": "self.version",
-                "drupal/forum": "self.version",
-                "drupal/hal": "self.version",
-                "drupal/help": "self.version",
-                "drupal/history": "self.version",
-                "drupal/image": "self.version",
-                "drupal/language": "self.version",
-                "drupal/link": "self.version",
-                "drupal/locale": "self.version",
-                "drupal/menu_link_content": "self.version",
-                "drupal/menu_ui": "self.version",
-                "drupal/migrate": "self.version",
-                "drupal/migrate_drupal": "self.version",
-                "drupal/minimal": "self.version",
-                "drupal/node": "self.version",
-                "drupal/options": "self.version",
-                "drupal/path": "self.version",
-                "drupal/phptemplate": "self.version",
-                "drupal/quickedit": "self.version",
-                "drupal/rdf": "self.version",
-                "drupal/responsive_image": "self.version",
-                "drupal/rest": "self.version",
-                "drupal/search": "self.version",
-                "drupal/serialization": "self.version",
-                "drupal/seven": "self.version",
-                "drupal/shortcut": "self.version",
-                "drupal/standard": "self.version",
-                "drupal/stark": "self.version",
-                "drupal/statistics": "self.version",
-                "drupal/syslog": "self.version",
-                "drupal/system": "self.version",
-                "drupal/taxonomy": "self.version",
-                "drupal/telephone": "self.version",
-                "drupal/text": "self.version",
-                "drupal/toolbar": "self.version",
-                "drupal/tour": "self.version",
-                "drupal/tracker": "self.version",
-                "drupal/twig": "self.version",
-                "drupal/update": "self.version",
-                "drupal/user": "self.version",
-                "drupal/views": "self.version",
-                "drupal/views_ui": "self.version"
+            "version": "8.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/drupal.git",
+                "reference": "8067ab5092a71556e83f4b166dc5f0e29045170e"
             },
-            "type": "metapackage",
-            "description": "Drupal core"
+            "require": {
+                "composer/installers": "^1.0.20",
+                "drupal/core": "~8.0"
+            },
+            "type": "project",
+            "extra": {
+                "_readme": [
+                    "By default Drupal loads the autoloader from ./core/vendor/autoload.php.",
+                    "To change the autoloader you can edit ./autoload.php."
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Drupal is an open source content management platform powering millions of websites and applications.",
+            "time": "2015-04-28 22:25:34"
+        },
+        {
+            "name": "drupal/libraries",
+            "version": "dev-8.x-3.x",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/libraries",
+                "reference": "d9972014c6b4bdb7bbbfc4c6a19e0868efa15d00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/libraries-8.x-3.x-dev.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-3.x": "8.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Allows version-dependent and shared usage of external libraries.",
+            "homepage": "http://drupal.org/project/libraries",
+            "time": "2015-02-18 16:17:34"
+        },
+        {
+            "name": "drupal/search_api",
+            "version": "dev-8.x-1.x",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/search_api",
+                "reference": "180bf67d37a6123b806bea0c30027f63e50eea13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/search_api-8.x-1.x-dev.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "8.*"
+            },
+            "replace": {
+                "drupal/search_api_db": "self.version"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-1.x": "8.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a generic framework for modules offering search capabilites.",
+            "time": "2015-04-21 15:33:24"
         },
         {
             "name": "drupal/token",
@@ -3678,9 +3690,12 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/drupal": 20,
         "drush/drush": 20,
-        "drupal/devel": 20,
-        "drupal/token": 20
+        "drupal/token": 20,
+        "drupal/libraries": 20,
+        "drupal/search_api": 20,
+        "drupal/devel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

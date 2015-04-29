@@ -3,30 +3,23 @@
     "description": "Project template for Drupal 8 projects with composer",
     "type": "project",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
+    "authors": [{
+        "name": "",
+        "role": ""
+    }],
     "support": {},
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://raw.githubusercontent.com/webflo/d8/master/packages.json"
-        },
-        {
-            "type": "composer",
-            "url": "http://packagist.drupal-composer.org"
-        }
-    ],
+    "repositories": [{
+        "type": "composer",
+        "url": "http://packagist.drupal-composer.org"
+    }],
     "require": {
         "composer/installers": "^1.0.20",
-        "drupal/core": "8.0.*",
+        "drupal/drupal": "8.0.x-dev",
         "drush/drush": "7.0.x-dev",
-
-        "drupal/devel": "8.1.*@dev",
-        "drupal/token": "8.1.*@dev"
+        "drupal/token": "8.1.x-dev",
+        "drupal/libraries": "8.3.x-dev",
+        "drupal/search_api": "8.1.x-dev",
+        "drupal/devel": "8.1.x-dev"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
