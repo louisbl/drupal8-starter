@@ -1,0 +1,63 @@
+data:
+  image: debian:jessie
+  user: www-data
+  volumes:
+    - .:/var/www/
+
+web:
+  image: nginx:1.7
+  ports:
+    - "8016:80"
+    - "44312:443"
+  links:
+    - php
+  volumes:
+    - docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+  volumes_from:
+    - data
+
+php:
+  image: louisbl/php:5.6-fpm
+  links:
+    - db
+  volumes_from:
+    - data
+
+composer:
+  image: louisbl/composer
+  volumes_from:
+    - data
+
+drush:
+  image: louisbl/php:5.6-cli
+  working_dir: /var/www
+  entrypoint: ["php", "./vendor/bin/drush.php"]
+  command: ""
+  links:
+    - db
+  volumes_from:
+    - data
+
+db:
+  image: mysql:5.6
+  volumes:
+    - docker/db:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root_password
+    MYSQL_DATABASE: database
+    MYSQL_USER: database
+    MYSQL_PASSWORD: database
+
+varnish:
+  image: louisbl/varnish:4.0
+  ports:
+    - "8017:80"
+  links:
+    - web:backend
+
+adminer:
+  image: louisbl/adminer:4.2.1
+  ports:
+    - "8015:80"
+  links:
+    - db
