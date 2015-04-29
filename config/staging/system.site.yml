@@ -1,0 +1,11 @@
+uuid: 6d5fd8d6-3d1e-4d46-b25b-91bcb29f330b
+name: 'Bienvenue Drupal'
+mail: bienvenue@drupal.dev
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr

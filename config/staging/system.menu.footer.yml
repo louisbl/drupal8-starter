@@ -1,0 +1,8 @@
+uuid: 014e42d8-1293-4cdc-9800-faee7ecafe3a
+langcode: en
+status: true
+dependencies: {  }
+id: footer
+label: Footer
+description: 'Use this for linking to site information.'
+locked: true

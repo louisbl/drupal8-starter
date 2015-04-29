@@ -1,0 +1,10 @@
+uuid: ac25b6d6-c17e-4ab9-bb47-719a0c5ca58a
+langcode: en
+status: true
+dependencies: {  }
+id: feedback
+label: 'Website feedback'
+recipients:
+  - bienvenue@drupal.dev
+reply: ''
+weight: 0

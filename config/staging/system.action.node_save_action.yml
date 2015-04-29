@@ -1,0 +1,11 @@
+uuid: fe2dba58-dedb-489c-a802-2a2f50e931a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_save_action
+label: 'Save content'
+type: node
+plugin: node_save_action
+configuration: {  }
