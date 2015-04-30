@@ -1,13 +1,6 @@
-# Composer template for Drupal projects
+# Drupal 8 starter project with Docker and composer
 
-[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
-
-This project template should provide a kickstart for managing your site 
-dependencies with [Composer](https://getcomposer.org/).
-
-If you want to know, how to use it as replacement for
-[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
-the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
+It uses the [Composer template](https://github.com/drupal-composer/drupal-project).
 
 ## Usage
 
@@ -28,6 +21,32 @@ With `composer require ...` you can download new dependencies to your installati
 cd some-dir
 composer require drupal/devel:8.*
 ```
+
+Copy the [.gitignore](https://github.com/louisbl/drupal8-starter/blob/master/.gitignore).
+
+Copy and adapt the [docker-compose.yml](https://github.com/louisbl/drupal8-starter/blob/master/docker-compose.yml) in your project.
+
+Copy the [nginx configuration](https://github.com/louisbl/drupal8-starter/blob/master/docker/nginx/default.conf) in `docker/nginx`.
+
+Make an `html` link to the web folder :
+```
+ln -s web html
+```
+
+Start the servers:
+```
+docker-compose up
+```
+
+* Varnish is on [localhost:8017](http://localhost:8017)
+* Nginx is on [localhost:8016](http://localhost:8016)
+* Adminer is on [localhost:8015](http:"//localhost:8015)
+
+To run `drush` commands use:
+```
+docker-compose run --rm drush <CMD>
+```
+The `drush` container is linked with nginx and mysql already.
 
 ## What does the template do?
 
